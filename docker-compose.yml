@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  my-postgres-prod:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: Password@1
+      POSTGRES_USER: postgres
+      POSTGRES_DB: graphql_ts_server_boilerplate
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"  
+  my-redis-prod:
+    image: redis
+  my-node-prod:
+    container_name: nodeapp
+    image: nodeapp
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    depends_on:
+      - my-postgres-prod
+      - my-redis-prod
+    ports:
+      - "4000:4000"
