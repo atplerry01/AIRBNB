@@ -1,4 +1,5 @@
 # fullstack-graphql-airbnb-clone
+
 A Fullstack GraphQL Airbnb Clone with React
 
 ## Road map
@@ -17,28 +18,37 @@ A Fullstack GraphQL Airbnb Clone with React
 - Typescript
 - Ant Design
 
+## Run postgres on Docker and connect with your host example
 
-docker run -d -p 5432:5432 --name my-postgres -e POSTGRES_PASSWORD=Password@1 postgres
-docker exec -it my-postgres bash
-psql -U postgres
-\l
-CREATE DATABASE graphql_ts_server_boilerplate;
-\q
+    docker run -d -p 5432:5432 --name my-postgres -e POSTGRES_PASSWORD=Password@1 postgres
+    docker exec -it my-postgres bash
+    psql -U postgres
+    \l
+    CREATE DATABASE graphql_ts_server_boilerplate;
+    \q
 
+## Run redis on Docker example
 
 docker run --name my-redis -d redis
+
+## Run redis on Docker and connect with your host example
+
 docker run -d --name my-redis -p 6379:6379  -v /path/to/redisconf/redis.conf:/redis.conf redis redis-server /redis.conf
 
-docker ps -a
-docker rm --force my-postgres
-docker rm --force my-redis
-docker rm --force sad_mendeleev
+## Some docker commands
 
-docker container ls
-docker-compose logs
+    docker ps -a
+    docker rm --force my-postgres
+    docker rm --force my-redis
+    docker rm --force sad_mendeleev
 
-# start the containers
+    docker container ls
+    docker-compose logs
+
+## start the containers
+
 docker-compose up
-# shutdown the containers
-docker-compose down
 
+## shutdown the containers
+
+docker-compose down
