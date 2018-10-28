@@ -40,4 +40,9 @@ export class Listing extends BaseEntity {
 
   @ManyToOne(() => User, user => user.listings)
   user: User;
+
+ // @Column("tsvector") fullSearch: string = `to_tsvector('english', 'name' || 'category' || 'description')`;
+ // https://mathisonian.com/writing/postgres-full-text-search-with-sequelizejs
+  
 }
+
