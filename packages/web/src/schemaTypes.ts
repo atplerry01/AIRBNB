@@ -73,7 +73,7 @@ export interface FindListingsQuery_findListings_owner {
 export interface FindListingsQuery_findListings {
   id: string;
   name: string;
-  pictureUrl: string;
+  pictureUrl: string | null;
   owner: FindListingsQuery_findListings_owner;
 }
 
@@ -137,6 +137,28 @@ export interface RegisterMutation {
 export interface RegisterMutationVariables {
   email: string;
   password: string;
+}
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL subscription operation: NewMessageSubscription
+// ====================================================
+
+export interface NewMessageSubscription_newMessage_user {
+  id: string;
+  email: string;
+}
+
+export interface NewMessageSubscription_newMessage {
+  text: string;
+  listingId: string;
+  user: NewMessageSubscription_newMessage_user;
+}
+
+export interface NewMessageSubscription {
+  newMessage: NewMessageSubscription_newMessage;
 }
 
 /* tslint:disable */
