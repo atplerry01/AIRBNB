@@ -10,7 +10,7 @@ const httpLink = createUploadLink({
 
 // create a WebSocket link:
 const wsLink = new WebSocketLink({
-  uri: `ws://localhost:8080/`,
+  uri: `ws://localhost:4000/`,
   options: {
     reconnect: true
   }
