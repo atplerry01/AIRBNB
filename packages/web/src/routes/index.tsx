@@ -12,6 +12,9 @@ import { TextPage } from '../modules/textPage';
 import { FindListingConnector } from '../modules/listing/find/findListing-connector';
 import { Logout } from '../modules/logout/logout';
 import TestSub from '../modules/textSub';
+import { ViewListingConnector } from '../modules/listing/view/viewListing-connector';
+import { ViewMessageConnector } from '../modules/messages/view/viewMessage-connector';
+
 
 
 export const Routes = () => (
@@ -19,12 +22,14 @@ export const Routes = () => (
     <Switch>
         <Route exact={true} path="/register" component={RegisterConnector} />
         <Route exact={true} path="/login" component={LoginConnector} />
-        <Route exact={true} path="/logout" component={Logout} />
+        <Route path="/logout" component={Logout} />
         <Route exact={true} path="/forgot-password" component={ForgotPasswordConnector} />
         <Route exact={true} path="/change-password/:key" component={ChangePasswordConnector} />
         <Route path="/m" component={TextPage} />
         <Route exact={true} path="/listings" component={FindListingConnector} />
-        <Route exact={true} path="/test-sub" component={TestSub} />
+        <Route path="/test-sub" component={TestSub} />
+        <Route exact={true} path="/listing/:listingId" component={ViewListingConnector} />
+        <Route exact={true} path="/listing/:listingId/chat" component={ViewMessageConnector} />
         <AuthRoute path="/create-listing" component={CreateListingConnector} />
      
     </Switch>

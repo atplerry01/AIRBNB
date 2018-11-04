@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 
 
 const SUB = gql`subscription NewMessageSubscription {
-    newMessage(listingId: "ccb623b1-f65f-4ea2-bc78-d1af62e436e7") {
+    newMessage(listingId: "5cbc83b3-b1ed-4e36-acb3-7b805cb8b1b9") {
       text
       listingId
       user {

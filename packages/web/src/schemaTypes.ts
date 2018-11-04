@@ -85,6 +85,34 @@ export interface FindListingsQuery {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL query operation: ViewListingQuery
+// ====================================================
+
+export interface ViewListingQuery_viewListing_owner {
+  id: string;
+  email: string;
+}
+
+export interface ViewListingQuery_viewListing {
+  id: string;
+  name: string;
+  category: string;
+  pictureUrl: string | null;
+  owner: ViewListingQuery_viewListing_owner;
+}
+
+export interface ViewListingQuery {
+  viewListing: ViewListingQuery_viewListing | null;
+}
+
+export interface ViewListingQueryVariables {
+  id: string;
+}
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: LoginMutation
 // ====================================================
 
@@ -116,6 +144,47 @@ export interface LoginMutationVariables {
 
 export interface LogoutMutation {
   logout: boolean | null;
+}
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: CreateMessageMutation
+// ====================================================
+
+export interface CreateMessageMutation {
+  createMessage: boolean;
+}
+
+export interface CreateMessageMutationVariables {
+  message: MessageInput;
+}
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: ViewMessagesQuery
+// ====================================================
+
+export interface ViewMessagesQuery_messages_user {
+  id: string;
+  email: string;
+}
+
+export interface ViewMessagesQuery_messages {
+  text: string;
+  user: ViewMessagesQuery_messages_user;
+  listingId: string;
+}
+
+export interface ViewMessagesQuery {
+  messages: ViewMessagesQuery_messages[];
+}
+
+export interface ViewMessagesQueryVariables {
+  listingId: string;
 }
 
 /* tslint:disable */
@@ -182,6 +251,11 @@ export interface MeQuery {
 //==============================================================
 // START Enums and Input Objects
 //==============================================================
+
+export interface MessageInput {
+  text: string;
+  listingId: string;
+}
 
 //==============================================================
 // END Enums and Input Objects

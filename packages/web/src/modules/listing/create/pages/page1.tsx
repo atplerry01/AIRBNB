@@ -10,7 +10,7 @@ export const Page1 = () => (
      <Field name="name" label="Name" placeholder="Name" component={InputField}  />
      <Field name="category" label="Category" placeholder="Category" component={InputField}  />
      <Field name="description" label="Description" placeholder="Description" component={InputField}  />  
-     <Field name="picture" component={DropzoneField}  />   
+     <Field name="picture" component={DropzoneField}  />  
     </>
 ) ;
 
