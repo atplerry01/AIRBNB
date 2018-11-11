@@ -13,7 +13,14 @@ export const viewListingQuery = gql`
       id
       name
       category
+      description
       pictureUrl
+      price
+      beds
+      guests
+      latitude
+      longitude
+      amenities
       owner {
         id
         email

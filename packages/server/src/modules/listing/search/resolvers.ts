@@ -1,6 +1,6 @@
-import { ResolverMap } from "../../../types/graphql-utils";
-import { Listing } from "../../../entity/Listing";
-import { getConnection } from "typeorm";
+import { ResolverMap } from '../../../types/graphql-utils';
+import { Listing } from '../../../entity/Listing';
+import { getConnection } from 'typeorm';
 
 export const resolvers: ResolverMap = {
   Query: {
@@ -10,15 +10,15 @@ export const resolvers: ResolverMap = {
     ) => {
       let listingQB = getConnection()
         .getRepository(Listing)
-        .createQueryBuilder("l");
+        .createQueryBuilder('l');
       if (guests) {
-        listingQB = listingQB.andWhere("l.guests = :guests", { guests });
+        listingQB = listingQB.andWhere('l.guests = :guests', { guests });
       }
       if (beds) {
-        listingQB = listingQB.andWhere("l.beds = :beds", { beds });
+        listingQB = listingQB.andWhere('l.beds = :beds', { beds });
       }
       if (name) {
-        listingQB = listingQB.andWhere("l.name ilike :name", {
+        listingQB = listingQB.andWhere('l.name ilike :name', {
           name: `%${name}%`
         });
       }

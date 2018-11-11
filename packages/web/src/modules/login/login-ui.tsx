@@ -9,17 +9,17 @@ import { INormalizedErrorMap } from '../types/normalizedErrorMap';
 
 const FormItem = AntForm.Item;
 
-interface FormValues {
+interface IFormValues {
   email: string;
   password: string;
 }
 
 interface Props {
   onFinish: () => void;
-  submit: (values: FormValues) => Promise<INormalizedErrorMap | null>;
+  submit: (values: IFormValues) => Promise<INormalizedErrorMap | null>;
 }
 
-class C extends React.Component<FormikProps<FormValues> & Props> {
+class C extends React.Component<FormikProps<IFormValues> & Props> {
   render() {
    
     return (
@@ -63,7 +63,7 @@ class C extends React.Component<FormikProps<FormValues> & Props> {
 }
 
 
-export const LoginView = withFormik<Props, FormValues>({
+export const LoginView = withFormik<Props, IFormValues>({
   validationSchema: loginSchema,
   validateOnBlur: false,
   validateOnChange: false,

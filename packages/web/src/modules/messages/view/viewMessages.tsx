@@ -19,7 +19,7 @@ export const viewMessagesQuery = gql`
 
 // no types needed therefore the subscription name is omitted
 export const newMessageSubscription = gql`
-  subscription($listingId: String!) {
+  subscription NewMessagesSubscription($listingId: String!) {
     newMessage(listingId: $listingId) {
      text
      user {
